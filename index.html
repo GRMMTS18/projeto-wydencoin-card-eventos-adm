@@ -1,111 +1,460 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Eventos</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Eventos Adm</title>
+    <!-- Incluindo o Font Awesome para os ícones -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Teachers:ital,wght@0,400..800;1,400..800&display=swap"
+      rel="stylesheet"
+    />
 
-    <!-- GOOGLE FONTS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Teachers:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
-</head>
-<body>
-
+    <!-- REFERÊNCIA AO ARQUIVO CSS EXTERNO -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <header>
-        <div class="interface">
-            <div class="logo">
-                <a href="#">
-                    <img src="logofaci.png" alt="Logo FACI">
-                </a> 
-            </div>
-
-            <nav>
-                <ul>
-                    <li><a href="#" class="menulink">Minhas Moedas</a></li>
-                    <li><a href="#" class="menulink">Eventos</a></li>
-                    <li><a href="#" class="menulink">Desafios</a></li>
-                    <li><a href="#" class="menulink">Lojinha</a></li>
-                </ul>
-            </nav>
+      <div class="interface">
+        <div class="logo">
+          <a href="#">
+            <img src="image/logofaci.png" alt="Logo FACI" />
+          </a>
         </div>
-    </header>
 
-    <!-- QUADRO DE EVENTOS UNIFICADO -->
+        <nav>
+          <ul>
+            <li><a href="#" class="menulink">Minhas Moedas</a></li>
+            <li><a href="#" class="menulink">Eventos</a></li>
+            <li><a href="#" class="menulink">Desafios</a></li>
+            <li><a href="#" class="menulink">Lojinha</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
     <h2 class="eventos-titulo">Eventos</h2>
     <div class="eventos">
-
-            <!-- Card 1 -->
-        <div class="eventos-card" id="card1">
-            <button class="info-botao-evento">🛈</button>
-            <img src="logofaci.png" alt="Evento 1" class="evento-image">
-            <div class="caixa-texto-evento">
-                <h3 class="info-evento">Título</h3>
-                <p class="paragra-evento">bla bla bla</p>
-                <button type="submit" class="botao-evento">Inscreva-se</button>
-            </div>
+      <!-- Card1: Adicionado data- atributos para modal dinâmico -->
+      <div class="eventos-card" id="card1">
+        <div class="icones-card">
+          <button
+            class="info-botao-evento"
+            title="Ver detalhes"
+            data-event-title="Oficina de Programação Web"
+            data-event-data="15/11/2025"
+            data-event-horario="14:00h"
+            data-event-local="Laboratório B (Sala 105)"
+            data-event-requisitos="Notebook próprio e noções básicas de informática."
+            data-event-image="image/logofaci.png"
+            data-event-descricao="Esta oficina focará nos fundamentos de desenvolvimento front-end, perfeita para iniciantes. Serão 3 horas de atividades práticas e demonstrações de projetos."
+          >
+            🛈
+          </button>
+          <button
+            class="delete-botao-evento"
+            title="Excluir evento"
+            data-modal-target="modalConfirmacao-1"
+          >
+            <i class="fas fa-trash-alt"></i>
+          </button>
         </div>
 
-            <!-- Card 2 -->
-        <div class="eventos-card" id="card2">
-            <button class="info-botao-evento">🛈</button>
-            <img src="logofaci.png" alt="Evento 2" class="evento-image">
-            <div class="caixa-texto-evento">
-                <h3 class="info-evento">Título</h3>
-                <p class="paragra-evento"><br>Em um mundo cada vez mais conectado, encontrar tempo para si mesma se tornou um verdadeiro desafio. Às vezes, tudo que precisamos é de uma pausa — um café quente, uma boa conversa ou simplesmente respirar fundo e lembrar que estamos indo bem. Porque no fim das contas, é nos pequenos momentos que a vida revela sua beleza. (ex) </p>
-                <button type="submit" class="botao-evento">Inscreva-se</button>
-            </div>
+        <img src="image/logofaci.png" alt="Evento 1" class="evento-image" />
+
+        <div class="caixa-texto-evento">
+          <h3 class="info-evento">Oficina de Programação Web</h3>
+          <p class="paragra-evento">
+            Aprenda os fundamentos do desenvolvimento web e comece a criar suas
+            primeiras páginas com HTML, CSS e JS.
+          </p>
+          <button type="submit" class="botao-evento">Editar</button>
         </div>
 
-                        <!-- Card 3 -->
-        <div class="eventos-card" id="card3">
-            <button class="info-botao-evento">🛈</button>
-            <img src="logofaci.png" alt="Evento 2" class="evento-image">
-            <div class="caixa-texto-evento">
-                <h3 class="info-evento">Título</h3>
-                <p class="paragra-evento"><br>Em um mundo cada vez mais conectado, encontrar tempo para si mesma se tornou um verdadeiro desafio. Às vezes, tudo que precisamos é de uma pausa — um café quente, uma boa conversa ou simplesmente respirar fundo e lembrar que estamos indo bem. Porque no fim das contas, é nos pequenos momentos que a vida revela sua beleza. (ex)</p>
-                <button type="submit" class="botao-evento">Inscreva-se</button>
+        <div
+          class="modal-overlay"
+          id="modalConfirmacao-1"
+          style="display: none"
+        >
+          <div class="modal-content">
+            <button class="fechar-modal" aria-label="Fechar Modal">
+              &times;
+            </button>
+            <h3>Tem certeza que deseja excluir este evento?</h3>
+            <div class="modal-actions">
+              <button class="botao-perigo" id="confirmarExclusao-1">Sim</button>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card2: Adicionado data- atributos para modal dinâmico -->
+      <div class="eventos-card" id="card2">
+        <div class="icones-card">
+          <button
+            class="info-botao-evento"
+            title="Ver detalhes"
+            data-event-title="Torneio de E-Sports FACI"
+            data-event-data="25/11/2025"
+            data-event-horario="19:00h"
+            data-event-local="Auditório Principal"
+            data-event-requisitos="Time de 5 pessoas inscrito e taxa de 5 Moedas FACI por time."
+            data-event-image="image/logofaci.png"
+            data-event-descricao="O torneio anual de jogos eletrônicos. O prêmio principal é de 100 Moedas FACI para o time vencedor, além do troféu. As regras detalhadas serão enviadas por e-mail após a inscrição do time."
+          >
+            🛈
+          </button>
+          <button
+            class="delete-botao-evento"
+            title="Excluir evento"
+            data-modal-target="modalConfirmacao-2"
+          >
+            <i class="fas fa-trash-alt"></i>
+          </button>
         </div>
 
-                        <!-- Card 4 -->
-        <div class="eventos-card" id="card4">
-            <button class="info-botao-evento">🛈</button>
-            <img src="logofaci.png" alt="Evento 2" class="evento-image">
-            <div class="caixa-texto-evento">
-                <h3 class="info-evento">Título</h3>
-                <p class="paragra-evento"><br>Em um mundo cada vez mais conectado, encontrar tempo para si mesma se tornou um verdadeiro desafio. Às vezes, tudo que precisamos é de uma pausa — um café quente, uma boa conversa ou simplesmente respirar fundo e lembrar que estamos indo bem. Porque no fim das contas, é nos pequenos momentos que a vida revela sua beleza. (ex)</p>
-                <button type="submit" class="botao-evento">Inscreva-se</button>
-            </div>
+        <img src="image/logofaci.png" alt="Evento 2" class="evento-image" />
+
+        <div class="caixa-texto-evento">
+          <h3 class="info-evento">Torneio de E-Sports FACI</h3>
+          <p class="paragra-evento">
+            Participe do nosso torneio anual e compita pelo prêmio principal de
+            100 Moedas FACI.
+          </p>
+          <button type="submit" class="botao-evento">Editar</button>
         </div>
 
-                        <!-- Card 5-->
-        <div class="eventos-card" id="card5">
-            <button class="info-botao-evento">🛈</button>
-            <img src="logofaci.png" alt="Evento 2" class="evento-image">
-            <div class="caixa-texto-evento">
-                <h3 class="info-evento">Título</h3>
-                <p class="paragra-evento"><br>Em um mundo cada vez mais conectado, encontrar tempo para si mesma se tornou um verdadeiro desafio. Às vezes, tudo que precisamos é de uma pausa — um café quente, uma boa conversa ou simplesmente respirar fundo e lembrar que estamos indo bem. Porque no fim das contas, é nos pequenos momentos que a vida revela sua beleza. (ex)</p>
-                <button type="submit" class="botao-evento">Inscreva-se</button>
+        <div
+          class="modal-overlay"
+          id="modalConfirmacao-2"
+          style="display: none"
+        >
+          <div class="modal-content">
+            <button class="fechar-modal" aria-label="Fechar Modal">
+              &times;
+            </button>
+            <h3>Tem certeza que deseja excluir este evento?</h3>
+            <div class="modal-actions">
+              <button class="botao-perigo" id="confirmarExclusao-2">Sim</button>
             </div>
+          </div>
         </div>
+      </div>
 
-            <!-- adicionar mais cards aqui -->
+      <!-- Card3: Estrutura completa e data- atributos -->
+      <div class="eventos-card" id="card3">
+        <div class="icones-card">
+          <button
+            class="info-botao-evento"
+            title="Ver detalhes"
+            data-event-title="Semana de Inovação"
+            data-event-data="01/12/2025"
+            data-event-horario="08:00h"
+            data-event-local="Campus Central"
+            data-event-requisitos="Inscrição prévia no site e documento com foto."
+            data-event-image="image/logofaci.png"
+            data-event-descricao="A Semana de Inovação terá 5 dias de palestras e workshops de ponta sobre I.A., Machine Learning e tendências de mercado. Haverá certificado de 40 horas."
+          >
+            🛈
+          </button>
+          <button
+            class="delete-botao-evento"
+            title="Excluir evento"
+            data-modal-target="modalConfirmacao-3"
+          >
+            <i class="fas fa-trash-alt"></i>
+          </button>
+        </div>
+        <img src="image/logofaci.png" alt="Evento 3" class="evento-image" />
+        <div class="caixa-texto-evento">
+          <h3 class="info-evento">Semana de Inovação</h3>
+          <p class="paragra-evento">
+            Participe da semana mais inovadora do ano, com palestras e workshops
+            de ponta...
+          </p>
+          <button type="submit" class="botao-evento">Editar</button>
+        </div>
+        <div
+          class="modal-overlay"
+          id="modalConfirmacao-3"
+          style="display: none"
+        >
+          <div class="modal-content">
+            <button class="fechar-modal" aria-label="Fechar Modal">
+              &times;
+            </button>
+            <h3>Tem certeza que deseja excluir este evento?</h3>
+            <div class="modal-actions">
+              <button class="botao-perigo" id="confirmarExclusao-3">Sim</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card4: Estrutura completa e data- atributos -->
+      <div class="eventos-card" id="card4">
+        <div class="icones-card">
+          <button
+            class="info-botao-evento"
+            title="Ver detalhes"
+            data-event-title="Palestra de Carreira"
+            data-event-data="10/12/2025"
+            data-event-horario="19:30h"
+            data-event-local="Online (Link enviado por e-mail)"
+            data-event-requisitos="Acesso à internet estável."
+            data-event-image="image/logofaci.png"
+            data-event-descricao="Palestra com um executivo renomado sobre as tendências do mercado de trabalho e como alavancar sua vida profissional na área de tecnologia. Sessão de Q&A ao final."
+          >
+            🛈
+          </button>
+          <button
+            class="delete-botao-evento"
+            title="Excluir evento"
+            data-modal-target="modalConfirmacao-4"
+          >
+            <i class="fas fa-trash-alt"></i>
+          </button>
+        </div>
+        <img src="image/logofaci.png" alt="Evento 4" class="evento-image" />
+        <div class="caixa-texto-evento">
+          <h3 class="info-evento">Palestra de Carreira</h3>
+          <p class="paragra-evento">
+            Descubra as tendências do mercado e como alavancar sua vida
+            profissional...
+          </p>
+          <button type="submit" class="botao-evento">Editar</button>
+        </div>
+        <div
+          class="modal-overlay"
+          id="modalConfirmacao-4"
+          style="display: none"
+        >
+          <div class="modal-content">
+            <button class="fechar-modal" aria-label="Fechar Modal">
+              &times;
+            </button>
+            <h3>Tem certeza que deseja excluir este evento?</h3>
+            <div class="modal-actions">
+              <button class="botao-perigo" id="confirmarExclusao-4">Sim</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card5: Estrutura completa e data- atributos -->
+      <div class="eventos-card" id="card5">
+        <div class="icones-card">
+          <button
+            class="info-botao-evento"
+            title="Ver detalhes"
+            data-event-title="Feira de Empreendedorismo"
+            data-event-data="20/12/2025"
+            data-event-horario="10:00h"
+            data-event-local="Quadra Poliesportiva"
+            data-event-requisitos="Aberto ao público."
+            data-event-image="image/logofaci.png"
+            data-event-descricao="Exposição de projetos inovadores de alunos da FACI. Oportunidade para networking e busca por investidores. Aberto a toda a comunidade acadêmica."
+          >
+            🛈
+          </button>
+          <button
+            class="delete-botao-evento"
+            title="Excluir evento"
+            data-modal-target="modalConfirmacao-5"
+          >
+            <i class="fas fa-trash-alt"></i>
+          </button>
+        </div>
+        <img src="image/logofaci.png" alt="Evento 5" class="evento-image" />
+        <div class="caixa-texto-evento">
+          <h3 class="info-evento">Feira de Empreendedorismo</h3>
+          <p class="paragra-evento">
+            Exposição de projetos e oportunidade de networking e busca por
+            investidores...
+          </p>
+          <button type="submit" class="botao-evento">Editar</button>
+        </div>
+        <div
+          class="modal-overlay"
+          id="modalConfirmacao-5"
+          style="display: none"
+        >
+          <div class="modal-content">
+            <button class="fechar-modal" aria-label="Fechar Modal">
+              &times;
+            </button>
+            <h3>Tem certeza que deseja excluir este evento?</h3>
+            <div class="modal-actions">
+              <button class="botao-perigo" id="confirmarExclusao-5">Sim</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <!-- MODAL DE INFORMAÇÕES -->
+    <!-- MODAL DE INFORMAÇÕES (Detalhamento do Evento) -->
     <div id="infoModal" class="modal-overlay">
-        <div class="modal-content">
-            <button class="close-modal-btn" aria-label="Fechar Modal">&times;</button>
-            <h3 id="modal-title">Carregando Detalhes...</h3>
-            <div id="modal-body">
-                <!-- Conteúdo do evento será injetado aqui pelo JavaScript -->
-            </div>
-        </div>
+      <div class="modal-content">
+        <button class="close-modal-btn" aria-label="Fechar Modal">
+          &times;
+        </button>
+        <h3 id="modal-title">Carregando Detalhes...</h3>
+        <div id="modal-body"></div>
+      </div>
     </div>
 
-    <script src="script.js"></script>
-</body>
+    <!-- CADASTRAR EVENTO: BOTÃO PRINCIPAL (AGORA FIXO) -->
+    <div class="fixed-button-container">
+      <button id="botaoCadastrar" class="botao-principal">
+        Cadastrar Evento
+      </button>
+    </div>
+
+    <!-- MODAL DE CADASTRO (Painel em Etapas) -->
+    <div id="etapa" class="etapa" style="display: none">
+      <!-- ETAPA 1 -->
+      <div id="etapa1" class="etapa" style="display: none">
+        <div class="eventos-cardadm">
+          <div class="visualizacao-evento">
+            <img
+              src="image/logofaci.png"
+              alt="Evento Cadastro"
+              class="evento-imageadm"
+              id="previewImage"
+            />
+            <div class="caixa-texto-eventoadm">
+              <h3 class="info-evento">Título do Novo Evento</h3>
+              <p class="paragra-evento">
+                Adicione aqui a descrição do evento (max 150 caracteres)...
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-actions">
+          <!-- Botão Fechar chama mostrarEtapa('etapa0') que fecha o painel -->
+          <button onclick="mostrarEtapa('etapa0')" class="botao-primario">
+            Fechar
+          </button>
+          <button onclick="mostrarEtapa('etapa2')" class="botao-secundario">
+            Próximo
+          </button>
+        </div>
+      </div>
+
+      <!-- ETAPA 2: CAMPO DE DESCRIÇÃO COMPLETA ADICIONADO -->
+      <div id="etapa2" class="etapa" style="display: none">
+        <div class="modal-card">
+          <h2 class="modal-titulo">Detalhes do Evento</h2>
+          <!-- Campos de formulário simulados aqui -->
+          <p>
+            <strong>Título:</strong>
+            <input
+              type="text"
+              id="inputTitulo"
+              placeholder="Insira o Título"
+              class="border p-2 rounded w-full"
+            />
+          </p>
+          <p>
+            <strong>Selecionar Imagem:</strong>
+            <input
+              type="file"
+              id="inputImagemFile"
+              accept="image/*"
+              class="border p-2 rounded w-full bg-gray-100"
+            />
+          </p>
+
+          <!-- NOVO CAMPO: DESCRIÇÃO COMPLETA -->
+          <p>
+            <strong>Descrição Completa:</strong>
+            <textarea
+              id="inputDescricao"
+              placeholder="Descreva o que vai acontecer no evento em detalhes..."
+              class="border p-2 rounded w-full h-24"
+            ></textarea>
+          </p>
+
+          <p>
+            <strong>Data:</strong>
+            <input
+              type="date"
+              id="inputData"
+              class="border p-2 rounded w-full"
+            />
+          </p>
+          <p>
+            <strong>Horário:</strong>
+            <input
+              type="time"
+              id="inputHorario"
+              class="border p-2 rounded w-full"
+            />
+          </p>
+          <p>
+            <strong>Local:</strong>
+            <input
+              type="text"
+              id="inputLocal"
+              placeholder="Auditório Principal"
+              class="border p-2 rounded w-full"
+            />
+          </p>
+          <p>
+            <strong>Requisitos:</strong>
+            <textarea
+              id="inputRequisitos"
+              placeholder="Requisitos para o candidato..."
+              class="border p-2 rounded w-full h-20"
+            ></textarea>
+          </p>
+          <div class="modal-actions">
+            <button onclick="mostrarEtapa('etapa1')" class="botao-terciario">
+              Anterior
+            </button>
+            <button onclick="mostrarEtapa('etapa3')" class="botao-secundario">
+              Próximo
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ETAPA 3: Botão Concluir chama a função de salvar/cadastro -->
+      <div id="etapa3" class="etapa" style="display: none">
+        <div class="modal-card flex flex-col items-center">
+          <h2 class="modal-titulo">Configuração de Inscrição</h2>
+          <div class="modal-actions flex-col gap-4 w-full max-w-sm mb-6">
+            <button class="botao-adquirir w-full">Exige Wyden Coins</button>
+            <p class="text-center text-gray-700">
+              O evento exige o uso de Wyden Coins para inscrição.
+            </p>
+          </div>
+          <div class="modal-actions flex-col gap-4 w-full max-w-sm">
+            <button class="botao-inscrever w-full">Inscrição Gratuita</button>
+            <p class="text-center text-gray-700">
+              Permite participar do evento gratuitamente, sem custo de Wyden
+              Coins.
+            </p>
+          </div>
+        </div>
+        <div class="modal-actions mt-8">
+          <button onclick="mostrarEtapa('etapa2')" class="botao-terciario">
+            Anterior
+          </button>
+          <!-- Botão que executa o cadastro/edição e fecha o modal -->
+          <button onclick="salvarEvento()" class="botao-secundario">
+            Concluir Cadastro
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js" def></script>
+  </body>
 </html>
