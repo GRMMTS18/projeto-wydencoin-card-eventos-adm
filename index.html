@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Eventos</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teachers:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="interface">
+            <div class="logo">
+                <a href="#">
+                    <img src="logofaci.png" alt="Logo FACI">
+                </a> 
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="#" class="menulink">Minhas Moedas</a></li>
+                    <li><a href="#" class="menulink">Eventos</a></li>
+                    <li><a href="#" class="menulink">Desafios</a></li>
+                    <li><a href="#" class="menulink">Lojinha</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- QUADRO DE EVENTOS UNIFICADO -->
+
+    <h2 class="eventos-titulo">Eventos</h2>
+    <div class="eventos">
+
+            <!-- Card 1 -->
+        <div class="eventos-card" id="card1">
+            <button class="info-botao-evento">🛈</button>
+            <img src="logofaci.png" alt="Evento 1" class="evento-image">
+            <div class="caixa-texto-evento">
+                <h3 class="info-evento">Título</h3>
+                <p class="paragra-evento">bla bla bla</p>
+                <button type="submit" class="botao-evento">Inscreva-se</button>
+            </div>
+        </div>
+
+            <!-- Card 2 -->
+        <div class="eventos-card" id="card2">
+            <button class="info-botao-evento">🛈</button>
+            <img src="logofaci.png" alt="Evento 2" class="evento-image">
+            <div class="caixa-texto-evento">
+                <h3 class="info-evento">Título</h3>
+                <p class="paragra-evento"><br>Em um mundo cada vez mais conectado, encontrar tempo para si mesma se tornou um verdadeiro desafio. Às vezes, tudo que precisamos é de uma pausa — um café quente, uma boa conversa ou simplesmente respirar fundo e lembrar que estamos indo bem. Porque no fim das contas, é nos pequenos momentos que a vida revela sua beleza. (ex) </p>
+                <button type="submit" class="botao-evento">Inscreva-se</button>
+            </div>
+        </div>
+
+                        <!-- Card 3 -->
+        <div class="eventos-card" id="card3">
+            <button class="info-botao-evento">🛈</button>
+            <img src="logofaci.png" alt="Evento 2" class="evento-image">
+            <div class="caixa-texto-evento">
+                <h3 class="info-evento">Título</h3>
+                <p class="paragra-evento"><br>Em um mundo cada vez mais conectado, encontrar tempo para si mesma se tornou um verdadeiro desafio. Às vezes, tudo que precisamos é de uma pausa — um café quente, uma boa conversa ou simplesmente respirar fundo e lembrar que estamos indo bem. Porque no fim das contas, é nos pequenos momentos que a vida revela sua beleza. (ex)</p>
+                <button type="submit" class="botao-evento">Inscreva-se</button>
+            </div>
+        </div>
+
+                        <!-- Card 4 -->
+        <div class="eventos-card" id="card4">
+            <button class="info-botao-evento">🛈</button>
+            <img src="logofaci.png" alt="Evento 2" class="evento-image">
+            <div class="caixa-texto-evento">
+                <h3 class="info-evento">Título</h3>
+                <p class="paragra-evento"><br>Em um mundo cada vez mais conectado, encontrar tempo para si mesma se tornou um verdadeiro desafio. Às vezes, tudo que precisamos é de uma pausa — um café quente, uma boa conversa ou simplesmente respirar fundo e lembrar que estamos indo bem. Porque no fim das contas, é nos pequenos momentos que a vida revela sua beleza. (ex)</p>
+                <button type="submit" class="botao-evento">Inscreva-se</button>
+            </div>
+        </div>
+
+                        <!-- Card 5-->
+        <div class="eventos-card" id="card5">
+            <button class="info-botao-evento">🛈</button>
+            <img src="logofaci.png" alt="Evento 2" class="evento-image">
+            <div class="caixa-texto-evento">
+                <h3 class="info-evento">Título</h3>
+                <p class="paragra-evento"><br>Em um mundo cada vez mais conectado, encontrar tempo para si mesma se tornou um verdadeiro desafio. Às vezes, tudo que precisamos é de uma pausa — um café quente, uma boa conversa ou simplesmente respirar fundo e lembrar que estamos indo bem. Porque no fim das contas, é nos pequenos momentos que a vida revela sua beleza. (ex)</p>
+                <button type="submit" class="botao-evento">Inscreva-se</button>
+            </div>
+        </div>
+
+            <!-- adicionar mais cards aqui -->
+    </div>
+
+    <!-- MODAL DE INFORMAÇÕES -->
+    <div id="infoModal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="close-modal-btn" aria-label="Fechar Modal">&times;</button>
+            <h3 id="modal-title">Carregando Detalhes...</h3>
+            <div id="modal-body">
+                <!-- Conteúdo do evento será injetado aqui pelo JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
