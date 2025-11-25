@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Eventos Adm</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Teachers:ital,wght@0,400..800;1,400..800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="interface">
+        <div class="logo">
+          <a href="#">
+            <img src="image/logofaci.png" alt="Logo FACI" />
+          </a>
+        </div>
+
+        <nav>
+          <ul>
+            <li><a href="#" class="menulink">Minhas Moedas</a></li>
+            <li><a href="#" class="menulink">Eventos</a></li>
+            <li><a href="#" class="menulink">Desafios</a></li>
+            <li><a href="#" class="menulink">Lojinha</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <h2 class="eventos-titulo">Eventos</h2>
+    <div class="eventos">
+      <div class="eventos-card" id="eventos-card-1">
+        <div class="icones-card">
+          <button
+            class="delete-botao-evento"
+            title="Excluir evento"
+            data-modal-target="modalConfirmacao-1"
+          >
+            <i class="fas fa-trash-alt"></i>
+          </button>
+        </div>
+        <img
+          src="image/logofaci.png"
+          alt="Evento 1"
+          class="evento-image"
+          data-info="imagem-editar"
+        />
+        <div class="caixa-texto-evento">
+          <div class="evento-card">
+            <h1 class="evento-titulo" data-info="evento-titulo-editar">
+              Torneio de E-Sports FACI
+            </h1>
+            <dl class="detalhes-lista">
+              <dt>Data:</dt>
+              <dd data-info="data-editar">25/11/2025</dd>
+
+              <dt>Horário:</dt>
+              <dd data-info="horario-intervalo-editar">
+                19:00h - 22:00h (Fase Eliminatória)
+              </dd>
+
+              <dt>Local:</dt>
+              <dd data-info="local-editar">Auditório Principal</dd>
+
+              <dt>Valor:</dt>
+              <dd data-info="valor-editar">5 Wyden Coins</dd>
+
+              <dt>Requisitos:</dt>
+              <dd data-info="requisitos-editar">
+                Time de 5 pessoas inscrito e taxa de pagamento por pessoa.
+              </dd>
+
+              <dt style="display: none">Link:</dt>
+              <dd data-info="link-inscricao-editar" style="display: none">
+                https://inscricao-esports.com/link
+              </dd>
+            </dl>
+            <div class="descricao-completa">
+              <p data-info="descricao-completa-editar">
+                O Torneio de E-Sports FACI é uma competição emocionante que
+                reúne os melhores jogadores da comunidade para disputar prêmios
+                incríveis. Prepare-se para uma noite de muita adrenalina,
+                estratégia e diversão! Forme seu time, inscreva-se e mostre suas
+                habilidades no campo de batalha virtual. Não perca a chance de
+                ser coroado o campeão do Torneio de E-Sports FACI! Venha torcer,
+                competir e se divertir com a gente. O evento é aberto para todos
+                os membros da comunidade, então reúna seus amigos, forme seu
+                time e participe dessa experiência única. Além disso, teremos
+                uma área de convivência com food trucks, música ao vivo e
+                sorteios de brindes para os participantes. Não fique de fora
+                dessa festa gamer! Inscreva-se agora e garanta seu lugar no
+                Torneio de E-Sports FACI. Esperamos por você para uma noite
+                inesquecível de competição e diversão!
+              </p>
+            </div>
+            <button type="button" class="botao-evento">Editar</button>
+          </div>
+        </div>
+      </div>
+      <div class="eventos-card" id="eventos-card-2">
+        <div class="icones-card">
+          <button
+            class="delete-botao-evento"
+            title="Excluir evento"
+            data-modal-target="modalConfirmacao-2"
+          >
+            <i class="fas fa-trash-alt"></i>
+          </button>
+        </div>
+        <img
+          src="image/logofaci.png"
+          alt="Evento 2"
+          class="evento-image"
+          data-info="imagem-editar"
+        />
+        <div class="caixa-texto-evento">
+          <div class="evento-card">
+            <h1 class="evento-titulo" data-info="evento-titulo-editar">
+              Outro Evento FACI
+            </h1>
+            <dl class="detalhes-lista">
+              <dt>Data:</dt>
+              <dd data-info="data-editar">10/12/2025</dd>
+
+              <dt>Horário:</dt>
+              <dd data-info="horario-intervalo-editar">10:00h - 12:00h</dd>
+
+              <dt>Local:</dt>
+              <dd data-info="local-editar">Sala de Reuniões 3</dd>
+
+              <dt>Valor:</dt>
+              <dd data-info="valor-editar">0 Wyden Coins</dd>
+
+              <dt>Requisitos:</dt>
+              <dd data-info="requisitos-editar">
+                Inscrição prévia e levar laptop.
+              </dd>
+
+              <dt style="display: none">Link:</dt>
+              <dd data-info="link-inscricao-editar" style="display: none">
+                https://link-evento.com/inscricao
+              </dd>
+            </dl>
+            <div class="descricao-completa">
+              <p data-info="descricao-completa-editar">
+                Evento de teste para demonstração da funcionalidade de edição e
+                exclusão.
+              </p>
+            </div>
+            <button type="button" class="botao-evento">Editar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-overlay" id="modalConfirmacao-1" style="display: none">
+      <div class="modal-content">
+        <button class="fechar-modal" aria-label="Fechar Modal">&times;</button>
+        <h3>Tem certeza que deseja excluir este evento?</h3>
+        <div class="modal-actions">
+          <button class="botao-lixeira" data-card-id="eventos-card-1">
+            Sim
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-overlay" id="modalConfirmacao-2" style="display: none">
+      <div class="modal-content">
+        <button class="fechar-modal" aria-label="Fechar Modal">&times;</button>
+        <h3>Tem certeza que deseja excluir este evento?</h3>
+        <div class="modal-actions">
+          <button class="botao-lixeira" data-card-id="eventos-card-2">
+            Sim
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="botao-add-card">
+      <input
+        type="button"
+        name="botaoCadastrar"
+        class="botao-principal"
+        id="abrirCard"
+        value="Adicionar evento"
+      />
+    </div>
+
+    <div
+      class="add-evento-card modal-overlay"
+      id="eventoCard"
+      style="display: none"
+    >
+      <form id="form-evento-admin">
+        <input type="hidden" id="cardIdEmEdicao" value="" />
+        <div class="botao-fechar-modal">
+          <button class="close-modal" id="fecharBtn">x</button>
+        </div>
+
+        <div class="form-grid">
+          <div class="add-imagem">
+            <label for="imagem">Imagem do evento:</label>
+            <input type="file" name="imagem" id="imagem" accept="image/*" />
+            <img
+              id="previewImagemAtual"
+              src=""
+              alt="Preview Imagem"
+              style="display: none; max-width: 100px; margin-top: 10px"
+            />
+          </div>
+
+          <div class="add-titulo">
+            <label for="titulo">Título:</label>
+            <input type="text" name="titulo" id="titulo" required />
+          </div>
+
+          <div class="add-data">
+            <label for="data-evento">Data do Evento:</label>
+            <input type="date" name="data-evento" id="data-evento" required />
+          </div>
+
+          <div class="add-horario-inicio">
+            <label for="horario-inicio">Hora de Início:</label>
+            <input
+              type="time"
+              name="horario-inicio"
+              id="horario-inicio"
+              required
+            />
+          </div>
+
+          <div class="add-horario-fim">
+            <label for="horario-fim">Hora de Término:</label>
+            <input type="time" name="horario-fim" id="horario-fim" required />
+          </div>
+
+          <div class="add-local">
+            <label for="local">Local:</label>
+            <input type="text" name="local" id="local" required />
+          </div>
+
+          <div class="add-valor">
+            <label for="valor">Valor (WC):</label>
+            <input type="number" name="valor" id="valor" required />
+          </div>
+
+          <div class="add-requisitos">
+            <label for="requisitos">Requisitos:</label>
+            <input type="text" name="requisitos" id="requisitos" required />
+          </div>
+
+          <div class="add-link-inscricao full-width">
+            <label for="link-inscricao"
+              >Link da Inscrição:</label
+            >
+            <input
+              type="url"
+              name="link-inscricao"
+              id="link-inscricao"
+              placeholder="https://link-de-inscricao.com"
+            />
+          </div>
+
+          <div class="add-descricao full-width">
+            <label for="descricao">Descrição:</label>
+            <textarea
+              name="descricao"
+              id="descricao"
+              rows="4"
+              required
+            ></textarea>
+          </div>
+
+          <div class="add-botao-enviar full-width">
+            <input
+              type="submit"
+              name="botaoEnviar"
+              class="botao-principal-2"
+              id="salvarEventoBtn"
+              value="Cadastrar"
+            />
+          </div>
+        </div>
+      </form>
+    </div>
+    <script src="script.js" defer></script>
+  </body>
+</html>

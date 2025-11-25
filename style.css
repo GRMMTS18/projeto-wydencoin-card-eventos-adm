@@ -1,0 +1,461 @@
+:root {
+  --vidro: rgba(225, 225, 225, 0.1);
+}
+
+/*ESTILO GERAL*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Teachers", sans-serif;
+}
+
+body {
+  background: white;
+  height: 100vh;
+}
+
+.interface {
+  max-width: 1280px;
+  margin: 0 0;
+}
+
+/*ESTILO MENU*/
+
+header {
+  padding: 20px 4%;
+}
+
+header > .interface {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header a {
+  color: #000;
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.2s;
+}
+
+/*COR MENU*/
+
+header a:hover {
+  color: #ff3d00;
+  transform: scale(1.05);
+}
+
+/*COR MENU*/
+
+header nav ul {
+  list-style-type: none;
+}
+
+header nav ul li {
+  display: inline-block;
+  padding: 0 80px;
+  font-size: 15px;
+}
+
+header a img {
+  max-width: 20vh;
+  max-height: 20vh;
+}
+
+/*ANIMAÇÃO MENU*/
+
+.menulink:after {
+  content: "";
+  height: 1px;
+  width: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #000;
+  transition: width 0.9s ease;
+}
+
+.menulink:hover:after {
+  width: 100%;
+}
+
+/*ANIMAÇÃO MENU*/
+/*QUADRO EVENTOS*/
+
+.eventos-titulo {
+  text-align: center;
+  font-size: 2rem;
+  margin: 10px;
+}
+
+.eventos {
+  display: grid;
+  padding: 6rem 2rem;
+  gap: 18px;
+  grid-template-columns: 1fr;
+}
+
+.eventos-card {
+  position: relative;
+  height: 55rem;
+  padding: 1rem 1rem; /* espaço extra no fundo pro botão */
+  background: #88005b;
+  margin-block: 0.75rem;
+  margin-left: 1rem;
+  margin-right: 0.5rem;
+  border-radius: 16px;
+  backdrop-filter: blur(5px);
+  border: 1px solid var(--vidro);
+  overflow: hidden;
+  transition: all 0.3s ease; /* Transição para o zoom e sombra */
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 3px 8px;
+}
+
+/* ANIMAÇÃO DE ZOOM AO HOVER NOS CARDS */
+.eventos-card:hover {
+  transform: scale(1.03); /* Aproxima o card um pouco */
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px; /* Sombra mais intensa */
+}
+
+/* ======================================================= */
+/* MEDIA QUERY (AJUSTE PARA CELULARES) */
+/* ======================================================= */
+
+/* Regras que se aplicam APENAS quando a largura da tela for de 600px ou menos */
+@media (max-width: 600px) {
+  .descricao-completa {
+    /* Altura Máxima Reduzida para celulares */
+    max-height: 150px;
+
+    padding-right: 10px;
+    padding-top: 10px;
+    margin-top: 15px;
+  }
+
+  .add-evento-card .form-grid {
+    /* Em telas pequenas, a grid é de uma coluna */
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .eventos {
+    grid-template-columns: 1fr 1fr;
+  }
+  .add-evento-card .form-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .eventos {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.evento-image {
+  height: 360px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.delete-botao-evento {
+  /* Botão de deletar evento (lixeira) */
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 10;
+  background: rgba(255, 211, 253, 0.9);
+  color: #44002d;
+  border: none;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.delete-botao-evento:hover {
+  background: rgb(212, 125, 208);
+}
+
+/* Modais de Confirmação (lixeira) */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 9999;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 1rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 4px 8px rgba(49, 38, 38, 0.2);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal-content h3 {
+  margin-top: 0;
+  color: #000000;
+  text-align: center;
+}
+
+.fechar-modal {
+  /* Botão fechar do modal de deletar Xzinho */
+  display: block;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #44002d;
+}
+
+.botao-lixeira {
+  /* Botão confirmar deleção do evento 'sim' */
+  display: block;
+  width: fit-content;
+  margin: 1rem auto 0 auto;
+  background-color: #e25323;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s;
+}
+
+.botao-lixeira:hover {
+  background-color: #b22d08;
+}
+
+.evento-titulo {
+  color: white;
+  margin-bottom: 5px;
+  font-size: 1.5rem;
+}
+
+/* Estilo para organizar os detalhes do evento lado a lado */
+.detalhes-lista {
+  margin-top: 1rem;
+  padding: 10px;
+  border-radius: 19px;
+  background-color: rgb(114, 5, 81);
+  color: rgb(255, 255, 255);
+}
+
+.detalhes-lista dt {
+  font-weight: bold;
+  width: 100px;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.detalhes-lista dd {
+  display: inline-table;
+  margin-left: 0;
+  margin-bottom: 0.5rem;
+  width: calc(100% - 105px);
+}
+
+.descricao-completa {
+  color: white;
+  max-height: 200px;
+  overflow-y: auto;
+  padding-right: 15px;
+  margin-top: 20px;
+  padding-top: 15px;
+
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-x: hidden;
+
+  margin-bottom: 2rem;
+}
+
+.descricao-completa p {
+  text-align: justify;
+  margin: 0;
+}
+
+.botao-evento {
+  /*Editar evento botao*/
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  color: #44002d;
+  background: #e1bfd6;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: calc(100% - 2rem);
+  transition: 0.2s ease;
+  font-size: 1.7rem;
+  line-height: 1rem;
+}
+
+.botao-evento:hover {
+  transform: scale(1.02);
+  box-shadow: 0 5px 15px #e1bfd6;
+}
+
+/* Container que envolve o botão "Adicionar Evento" (Fixo na parte inferior) */
+.botao-add-card {
+  position: fixed;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  width: 80%;
+  max-width: 450px;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+}
+
+.botao-principal {
+  /*Adicionar evento*/
+  display: block;
+  width: 60%;
+  margin: auto;
+  max-width: 600px;
+  padding: 13px;
+  font-family: "Teachers", sans-serif;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+  background-color: #ff3d00;
+  cursor: pointer;
+  font-size: 27px;
+
+  transition: all 0.3s ease;
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+}
+
+/* ANIMAÇÃO DE ZOOM AO HOVER NO BOTÃO PRINCIPAL */
+.botao-principal:hover {
+  background: #b12900;
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.35);
+}
+
+.close-modal {
+  /* X do card de formulario do adm*/
+  display: block;
+  margin-left: auto;
+  border: none;
+  background: transparent;
+  font-size: 2.5rem;
+  color: #44002d;
+  cursor: pointer;
+  transition: transform 0.7s ease;
+}
+
+.add-evento-card {
+  /*Modal/Formulário do Adm*/
+  display: flex;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999999;
+  box-shadow: 0 0 0 5000px rgba(0, 0, 0, 0.6);
+  width: 90vw;
+  max-width: 500px;
+  height: 80vh;
+  max-height: 650px;
+  overflow-y: auto;
+  background: #e5bed9;
+  border-radius: 16px;
+  padding: 2rem;
+  flex-direction: column;
+  gap: 15px;
+  font-size: 1.1rem;
+  line-height: 1.8rem;
+  pointer-events: auto;
+}
+
+/* Novo formato em Grid */
+.add-evento-card .form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Duas colunas por padrão (desktop) */
+  gap: 10px;
+  padding: 10px 0;
+}
+
+.add-evento-card label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.add-evento-card input:not([type="submit"]),
+.add-evento-card textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Faz com que a descrição e o botão ocupem a largura total */
+.add-descricao,
+.full-width {
+  grid-column: 1 / -1;
+}
+
+.botao-principal-2 {
+  /* Botão salvar do card */
+  display: block;
+  position: relative;
+  width: 10rem;
+  margin: 15px auto 0 auto;
+  padding: 10px;
+  font-family: "Teachers", sans-serif;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+  background-color: #88005b;
+  cursor: pointer;
+  font-size: 27px;
+  transition: all 0.3s ease;
+}
+
+.botao-principal-2:hover {
+  background: #4a0324;
+  transform: scale(1.05);
+}
